@@ -1,0 +1,45 @@
+generated: '2026-07-19'
+method: searched
+status: published
+source: https://docs.incountry.com/agentcloak/mcp-server-tutorial/
+server:
+  name: incountry-agentcloak
+  product: AgentCloak
+  transport: http
+  protocol: JSON-RPC 2.0
+  url_template: https://<country>-restapi-<pop>.api.incountry.io/mcp
+  description: >-
+    AgentCloak is InCountry's hosted Model Context Protocol (MCP) server that
+    anonymizes (cloaks) personally identifiable information in text before it is
+    sent to an LLM/agent and restores (uncloaks) the original values afterward,
+    keeping regulated data in-region. Each MCP server instance is provisioned per
+    environment/service via the InCountry Portal API.
+  provisioning:
+    endpoint: POST https://portal.incountry.com/api/environments/{environment_uuid}/services/{service_uuid}/mcp-servers
+    auth: Bearer token (Portal API)
+  authentication:
+    header: x-inc-agentcloak-api-key
+    format: "<mcp_server_uuid>:<secret>"
+    additional_headers:
+    - "Content-Type: application/json"
+    - "Accept: application/json, text/event-stream"
+  env_vars:
+  - name: INC_MCP_URL
+    description: Full MCP server endpoint URL
+  - name: INC_MCP_API_KEY
+    description: AgentCloak API key (uuid:secret)
+tools:
+- name: cloak
+  description: Anonymizes personally identifiable information in the supplied text input, returning masked text plus a session id.
+- name: uncloak
+  description: Restores the original data using the session id returned by a prior cloak call.
+pii_field_types:
+- name
+- age
+- gender
+- location
+- medical conditions
+- financial data
+- weight
+- weight units
+docs: https://docs.incountry.com/agentcloak/mcp-server-tutorial/

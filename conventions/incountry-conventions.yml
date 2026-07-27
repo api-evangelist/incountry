@@ -1,0 +1,44 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.incountry.com/rest-api/
+docs: https://docs.incountry.com/rest-api/
+authentication:
+  style: OAuth2 client-credentials bearer token
+  token_url: https://idp.incountry.com/oauth2/token/
+  token_lifespan_seconds: 300
+  ref: authentication/incountry-authentication.yml
+communication:
+  format: JSON
+  methods: [POST, GET, DELETE]
+  encryption: AES-GCM (256-bit key, 96-bit nonce) applied to record payloads
+data_residency:
+  model: Point-of-Presence (PoP) per country
+  country_selection: >-
+    Country is selected via the host prefix ({country_code}-restapi-mt-01.api.incountry.io)
+    and/or the {country} path segment on record operations, keeping data in-region.
+idempotency:
+  supported: partial
+  mechanism: >-
+    Single-record create/update (POST /api/records) is an upsert keyed by the record
+    key, so repeating a write with the same key is idempotent. No dedicated
+    Idempotency-Key request header is documented.
+pagination:
+  style: request-body offset/limit on search
+  operation: POST /api/records/find
+  params: [limit, offset]
+  note: Search accepts filter/limit/offset in the request body; find returns matching records plus meta.
+versioning:
+  scheme: semver + URI path (v2 introduced for newer model/DB operations)
+error_envelope:
+  format: JSON error body with HTTP status
+  ref: errors/incountry-error-codes.yml
+batching:
+  supported: true
+  operations: [POST /api/records/batch, POST /api/records/batch/update, POST /api/records/batch/delete]
+attachments:
+  database: POST/GET/DELETE /api/records/{country}/{key}/files
+  object_storage: pre-signed upload-url / download-url flows under /api/records/{record_key}/attachments
+cross_links:
+  errors: errors/incountry-error-codes.yml
+  lifecycle: lifecycle/incountry-lifecycle.yml
+  authentication: authentication/incountry-authentication.yml

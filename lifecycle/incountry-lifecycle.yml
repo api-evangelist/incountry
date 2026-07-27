@@ -1,0 +1,16 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.incountry.com/rest-api/ ; https://status.incountry.com/
+versioning:
+  scheme: semver
+  current: 2.34.0
+  api_path_versions: [v2]
+  docs: https://docs.incountry.com/release-notes/rest-api-release-notes/
+status_page: https://status.incountry.com/
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: No formal deprecation/sunset policy located in the public documentation.
+sla:
+  url: null
+  note: Uptime/SLA details are handled per customer contract; a public status page is available.

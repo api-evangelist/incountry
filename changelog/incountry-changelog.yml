@@ -1,0 +1,41 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.incountry.com/release-notes/rest-api-release-notes/
+docs: https://docs.incountry.com/release-notes/rest-api-release-notes/
+scheme: semver
+product: InCountry REST API
+current_version: 2.34.0
+note: >-
+  The published release notes list versions without explicit calendar dates;
+  entries are captured in release order (newest first) from the live changelog.
+entries:
+- version: 2.34.0
+  breaking: false
+  highlights:
+  - Added direct database operations for the find methods
+  - New support for Dedicated Database (DDB) operations
+  - Performance and reliability enhancements
+- version: 2.33.0
+  breaking: false
+  highlights:
+  - New performance-optimized record-creation method with direct DB communication via POST /api/v2/models/{model}
+  - Coordination between ACL and Firewall features for masking-mode support
+- version: 2.32.2
+  breaking: false
+  highlights:
+  - Bug fix - proper handling of an expired OAuth2 token
+- version: 2.32.1
+  breaking: false
+  highlights:
+  - Improved TLS environment-variables logic
+- version: 2.32.0
+  breaking: false
+  highlights:
+  - Completed migration of ACL logic from the PoP API to the REST API
+  - Added request signing between REST and PoP APIs
+  - Schema support in resident functions
+- version: 2.31.0
+  breaking: false
+  highlights:
+  - JSON field support in record schemas
+  - Meta information added to responses indicating redacted fields

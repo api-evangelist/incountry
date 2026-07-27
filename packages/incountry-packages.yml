@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: searched
+source: https://pypi.org/project/incountry/ ; https://www.npmjs.com/package/incountry
+packages:
+- language: python
+  registry: pypi
+  name: incountry
+  version: 5.0.0
+  url: https://pypi.org/project/incountry/
+  install: pip install incountry
+  summary: InCountry Storage SDK
+  source_code: https://github.com/incountry/sdk-python
+  official: true
+- language: javascript
+  registry: npm
+  name: incountry
+  version: 5.1.0
+  url: https://www.npmjs.com/package/incountry
+  install: npm install incountry
+  summary: SDK for writing, reading, and deleting records using InCountry's storage suite
+  source_code: https://github.com/incountry/sdk-nodejs
+  official: true
+notes: >-
+  Both client libraries are first-party (published by InCountry) and remain
+  available on their public registries. The linked GitHub source repositories
+  (incountry/sdk-python, incountry/sdk-nodejs) currently return 404 / are not
+  public, but the packages themselves are installable from PyPI and npm.

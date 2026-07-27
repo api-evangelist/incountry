@@ -1,7 +1,16 @@
 aid: incountry
 name: InCountry
-description: InCountry is a company surfaced as a portfolio company of bloomberg-beta and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  InCountry is a data-residency-as-a-service (DRaaS) platform that lets companies
+  store, process, and comply with the data-localization and privacy laws of specific
+  countries without building in-country infrastructure. Its OAuth2-secured REST API
+  stores regulated records (PII, financial, and health data) inside a chosen country's
+  borders using AES-GCM 256-bit encryption, exposing CRUD, batch, search, aggregate,
+  clone, and attachment operations keyed by country and record key. InCountry also
+  operates AgentCloak, a hosted Model Context Protocol (MCP) server that anonymizes
+  (cloaks) and restores (uncloaks) personally identifiable information for AI agents.
+  The platform supports data residency across 90+ jurisdictions and is certified
+  against SOC 2 Type II, ISO 27001, ISO 27701, PCI DSS, and HIPAA.
 url: https://raw.githubusercontent.com/api-evangelist/incountry/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,12 +18,62 @@ x-backed-by:
 - bloomberg-beta
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://incountry.com/wp-content/uploads/2019/07/logo.png
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Data Residency
+- Data Localization
+- Compliance
+- Privacy
+- Data Security
+- Encryption
+- PII
+- GDPR
+- Data Sovereignty
+- MCP
+apis:
+- name: InCountry REST API
+  description: >-
+    RESTful API for storing, searching, updating, and deleting regulated records
+    inside a selected country's borders, authenticated with OAuth2 client-credentials
+    and encrypted with AES-GCM. Supports single/batch records, find/aggregate search,
+    record cloning, rehash, and database + object-storage attachments.
+  humanURL: https://docs.incountry.com/rest-api/
+  baseURL: https://se-restapi-mt-01.api.incountry.io
+  tags:
+  - Data Residency
+  - Compliance
+  - Records
+  properties:
+  - type: Documentation
+    url: https://docs.incountry.com/
+  - type: APIReference
+    url: https://docs.incountry.com/rest-api/
+  - type: GettingStarted
+    url: https://docs.incountry.com/data-residency-as-a-service/tutorial/
+  - type: Authentication
+    url: authentication/incountry-authentication.yml
+  - type: Conventions
+    url: conventions/incountry-conventions.yml
+  - type: ErrorCatalog
+    url: errors/incountry-error-codes.yml
+  - type: Postman
+    url: https://docs.incountry.com/assets/files/RestAPI_Demo_oAuth.postman_collection-e8b012cac5488563ba466e6ea44c309c.json
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +82,58 @@ maintainers:
 common:
 - type: Website
   url: https://incountry.com/
+- type: DeveloperPortal
+  url: https://portal.incountry.com/login
+- type: Documentation
+  url: https://docs.incountry.com/
+- type: APIReference
+  url: https://docs.incountry.com/rest-api/
+- type: GettingStarted
+  url: https://docs.incountry.com/data-residency-as-a-service/tutorial/
+- type: Blog
+  url: https://incountry.com/news-blog/
+- type: Support
+  url: https://incountry.com/contact/
+- type: Pricing
+  url: https://incountry.com/pricing/
+- type: Login
+  url: https://portal.incountry.com/login
+- type: TermsOfService
+  url: https://incountry.com/legal/terms-of-service/
+- type: PrivacyPolicy
+  url: https://incountry.com/legal/privacy-policy/
+- type: StatusPage
+  url: https://status.incountry.com/
+- type: Postman
+  url: https://docs.incountry.com/assets/files/RestAPI_Demo_oAuth.postman_collection-e8b012cac5488563ba466e6ea44c309c.json
+- type: MCPServer
+  url: mcp/incountry-mcp.yml
+- type: Authentication
+  url: authentication/incountry-authentication.yml
+- type: Packages
+  url: packages/incountry-packages.yml
+- type: SDKs
+  url: packages/incountry-packages.yml
+- type: ChangeLog
+  url: changelog/incountry-changelog.yml
+- type: Lifecycle
+  url: lifecycle/incountry-lifecycle.yml
+- type: Conventions
+  url: conventions/incountry-conventions.yml
+- type: ErrorCatalog
+  url: errors/incountry-error-codes.yml
+- type: Conformance
+  url: conformance/incountry-conformance.yml
+- type: Compliance
+  url: https://incountry.com/resource/security-and-compliance/
+- type: TrustCenter
+  url: security/incountry-trust-center.yml
+- type: DomainSecurity
+  url: security/incountry-domain-security.yml
+- type: LLMsTxt
+  url: llms/incountry-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

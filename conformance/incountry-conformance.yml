@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.incountry.com/rest-api/ ; https://incountry.com/resource/security-and-compliance/
+standards:
+- id: oauth2
+  conforms: true
+  evidence: REST API authenticates with OAuth2 client-credentials tokens from https://idp.incountry.com/oauth2/token/
+- id: oauth2-client-credentials
+  conforms: true
+  evidence: Machine-to-machine client_credentials grant with HTTP Basic client authentication
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors returned as JSON body + HTTP status; no application/problem+json documented
+- id: gdpr
+  conforms: true
+  evidence: Data-residency platform explicitly built for GDPR and cross-border data-localization compliance
+compliance_program:
+  published: true
+  page: https://incountry.com/resource/security-and-compliance/
+  certifications:
+  - SOC 1 Type II
+  - SOC 2 Type II
+  - SOC 3
+  - ISO/IEC 27001:2022
+  - ISO 27017
+  - ISO 27018
+  - ISO 27701
+  - PCI DSS
+  - HIPAA
+  - CSA STAR Level 2
+  - GxP
+  regional:
+  - 152-FZ (Russia)
+  - PIPL (China)
+  - DSL (China)
+  - CSL (China)
+  - MLPS 2.0 (China)

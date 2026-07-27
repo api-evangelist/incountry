@@ -1,0 +1,54 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.incountry.com/rest-api/
+docs: https://docs.incountry.com/rest-api/
+format: http-status
+envelope: JSON error body accompanying the HTTP status code
+note: >-
+  InCountry does not publish an OpenAPI spec; this catalog captures the HTTP status
+  codes documented on the REST API reference. No application/problem+json (RFC 9457)
+  envelope is documented.
+statuses:
+- status: 200
+  class: success
+  meaning: Request succeeded.
+- status: 201
+  class: success
+  meaning: Resource created.
+- status: 204
+  class: success
+  meaning: Success, no content returned.
+- status: 400
+  class: client-error
+  meaning: Bad request / malformed input.
+- status: 401
+  class: client-error
+  meaning: Unauthorized — missing or invalid access token.
+  remediation: Obtain a fresh OAuth2 client-credentials access token (tokens expire after 300s).
+- status: 403
+  class: client-error
+  meaning: Forbidden — token lacks access to the requested environment/resource.
+- status: 404
+  class: client-error
+  meaning: Record or resource not found.
+- status: 409
+  class: client-error
+  meaning: Conflict.
+- status: 413
+  class: client-error
+  meaning: Payload too large.
+- status: 415
+  class: client-error
+  meaning: Unsupported media type.
+- status: 419
+  class: client-error
+  meaning: Authentication/session token expired.
+- status: 422
+  class: client-error
+  meaning: Unprocessable entity — validation failed.
+- status: 429
+  class: client-error
+  meaning: Too many requests — rate limited.
+- status: 5xx
+  class: server-error
+  meaning: Server-side error.
