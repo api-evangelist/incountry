@@ -8,21 +8,19 @@ server:
   transport: http
   protocol: JSON-RPC 2.0
   url_template: https://<country>-restapi-<pop>.api.incountry.io/mcp
-  description: >-
-    AgentCloak is InCountry's hosted Model Context Protocol (MCP) server that
-    anonymizes (cloaks) personally identifiable information in text before it is
-    sent to an LLM/agent and restores (uncloaks) the original values afterward,
-    keeping regulated data in-region. Each MCP server instance is provisioned per
-    environment/service via the InCountry Portal API.
+  description: AgentCloak is InCountry's hosted Model Context Protocol (MCP) server that anonymizes (cloaks)
+    personally identifiable information in text before it is sent to an LLM/agent and restores (uncloaks)
+    the original values afterward, keeping regulated data in-region. Each MCP server instance is provisioned
+    per environment/service via the InCountry Portal API.
   provisioning:
     endpoint: POST https://portal.incountry.com/api/environments/{environment_uuid}/services/{service_uuid}/mcp-servers
     auth: Bearer token (Portal API)
   authentication:
     header: x-inc-agentcloak-api-key
-    format: "<mcp_server_uuid>:<secret>"
+    format: <mcp_server_uuid>:<secret>
     additional_headers:
-    - "Content-Type: application/json"
-    - "Accept: application/json, text/event-stream"
+    - 'Content-Type: application/json'
+    - 'Accept: application/json, text/event-stream'
   env_vars:
   - name: INC_MCP_URL
     description: Full MCP server endpoint URL
@@ -30,7 +28,8 @@ server:
     description: AgentCloak API key (uuid:secret)
 tools:
 - name: cloak
-  description: Anonymizes personally identifiable information in the supplied text input, returning masked text plus a session id.
+  description: Anonymizes personally identifiable information in the supplied text input, returning masked
+    text plus a session id.
 - name: uncloak
   description: Restores the original data using the session id returned by a prior cloak call.
 pii_field_types:
@@ -43,3 +42,12 @@ pii_field_types:
 - weight
 - weight units
 docs: https://docs.incountry.com/agentcloak/mcp-server-tutorial/
+deployment:
+  mode: none
+  endpoint: https://portal.incountry.com/api/environments/{environment_uuid}/services/{service_uuid}/mcp-servers
+  verified: probed
+  probe: dead
+  note: the endpoint this manifest claimed did not answer; recorded as none rather than deleted so the
+    claim stays auditable
+  checked: '2026-08-12'
+  source: catalog MCP census
