@@ -64,6 +64,103 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-InCountry is a company surfaced as a portfolio company of bloomberg-beta and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+InCountry is a data-residency-as-a-service (DRaaS) platform that lets companies store, process, and comply with the data-localization and privacy laws of specific countries without building in-country infrastructure. Its OAuth2-secured REST API stores regulated records (PII, financial, and health data) inside a chosen country's borders using AES-GCM 256-bit encryption, exposing CRUD, batch, search, aggregate, clone, and attachment operations keyed by country and record key. InCountry also operates AgentCloak, a hosted Model Context Protocol (MCP) server that anonymizes (cloaks) and restores (uncloaks) personally identifiable information for AI agents. The platform supports data residency across 90+ jurisdictions and is certified against SOC 2 Type II, ISO 27001, ISO 27701, PCI DSS, and HIPAA.
 
-Backed by: bloomberg-beta — https://incountry.com/
+**Areas:** Company · Data Residency · Data Localization · Compliance · Privacy · Data Security · Encryption · PII · GDPR · Data Sovereignty · MCP
+
+## InCountry on APIs.io
+
+Everything profiled for InCountry is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/incountry/](https://apis.io/providers/incountry/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [InCountry REST API](https://apis.io/apis/incountry/incountry-rest-api/) — RESTful API for storing, searching, updating, and deleting regulated records inside a selected country's borders, authenticated with OAuth2…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [incountry-agentcloak](https://apis.io/servers/incountry/incountry-agentcloak/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Incountry Authentication](https://apis.io/security/incountry/incountry-authentication/)
+- [Incountry Domain Security](https://apis.io/security/incountry/incountry-domain-security/)
+- [Incountry Trust Center](https://apis.io/security/incountry/incountry-trust-center/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://incountry.com/)
+- [Documentation](https://docs.incountry.com/)
+- [Getting started](https://docs.incountry.com/data-residency-as-a-service/tutorial/)
+- [API reference](https://docs.incountry.com/rest-api/)
+- [Pricing](https://incountry.com/pricing/)
+- [Support](https://incountry.com/contact/)
+- [Blog](https://incountry.com/news-blog/)
+- [Compliance](https://incountry.com/resource/security-and-compliance/)
+- [Terms of service](https://incountry.com/legal/terms-of-service/)
+- [Privacy policy](https://incountry.com/legal/privacy-policy/)
+- [Status](https://status.incountry.com/)
+
+## API Evangelist rating
+
+**Kin Score 41.7** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 31.6 |
+| Developer ergonomics | 69.0 |
+| Access clarity | 60.5 |
+
+**Agent readiness 5.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/incountry/](https://apis.io/providers/incountry/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for InCountry: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/incountry/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
